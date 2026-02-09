@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PoWHS$ Global Bank</title>
+    <style>
+        body { background: #0d1117; color: white; font-family: sans-serif; text-align: center; padding: 50px; }
+        .btn { background: #238636; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 18px; }
+        .status { margin-top: 20px; color: #8b949e; }
+    </style>
+</head>
+<body>
+    <h1>PoWHS$ Global Decentralized Bank</h1>
+    <p>Identity to Intelligence (I2I) Protocol - Version 1.1</p>
+    
+    <button class="btn" onclick="connectWallet()">Connect Web3 Wallet</button>
+    
+    <div id="userStatus" class="status">Wallet not connected.</div>
+    <div id="i2iStamp" class="status"></div>
+
+    <script src="powhs_core.js"></script>
+    <script>
+        function connectWallet() {
+            document.getElementById('userStatus').innerText = "Connecting to Trust Wallet...";
+            // Simulated I2I Stamp Action
+            setTimeout(() => {
+                document.getElementById('userStatus').innerText = "Wallet Connected!";
+                document.getElementById('i2iStamp').innerHTML = "<b>I2I Receipt Stamp:</b> Active (ID-Verified)";
+                console.log("I2I Stamp Applied to Receipt.");
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
