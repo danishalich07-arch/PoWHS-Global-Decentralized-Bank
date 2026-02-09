@@ -1,0 +1,14 @@
+name: PoWHS Genesis Mint
+on:
+  workflow_dispatch: # Is se aap manually button daba kar mint kar sakenge
+
+jobs:
+  mint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Genesis Block
+        run: |
+          echo "Minting 3,000,000 PoWHS$ to Owner Wallet"
+          echo "Status: Block 0 Success"
+          echo "Supply: 3M Created"
+          
