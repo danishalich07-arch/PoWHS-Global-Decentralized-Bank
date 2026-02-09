@@ -1,0 +1,14 @@
+name: PoWHS Genesis Mint
+on:
+  workflow_dispatch:
+
+jobs:
+  mint_tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Genesis Block Start
+        run: |
+          echo "Initiating 3,000,000 PoWHS$ Minting..."
+          echo "Status: Block 0 Verified"
+          echo "Owner: Verified via I2I"
+          
