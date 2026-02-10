@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "chainId": "0x2C3",
+    "network": "PoWHS Protocol",
+    "symbol": "PoWHS$",
+    "status": "active",
+    "fee": 0
+  }
+}
