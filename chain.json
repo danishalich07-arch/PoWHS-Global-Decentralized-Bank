@@ -1,0 +1,22 @@
+{
+  "chain_name": "PoWHS Protocol",
+  "protocol_standard": "UIP07",
+  "version": "1.0.0-Genesis",
+  "network_status": "Sovereign",
+  "genesis_ledger": {
+    "master_address": "UIP07_7332718893b2a27f01d62cc844ccec8dd7eaca45",
+    "initial_balance": "3000000",
+    "intelligence_layer": "MASTER_ORIGIN"
+  },
+  "shadow_engine": {
+    "status": "ACTIVE",
+    "encryption": "SHA-256-UIP",
+    "tracking": "OFFLINE_FIRST",
+    "note": "All subsequent addresses after Master Origin are Intelligence Shadows."
+  },
+  "global_hub": {
+    "transaction_fee": "$1",
+    "tps_capacity": "100000",
+    "ownerless_mode": true
+  }
+}
