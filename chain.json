@@ -21,7 +21,7 @@
   },
   "settings": {
     "block_time": "5m",
-    "fee": "$1",
+    "fee": "$0",
     "protection": "Intelligence Shadow Active",
     "distribution_type": "PoWHS+S"
   }
