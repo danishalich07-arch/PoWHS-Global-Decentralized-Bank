@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoWHS$ Protocol | UIP07 Sovereign Node</title>
+    <style>
+        body { background: #0a0a0a; color: #00ff00; font-family: 'Courier New', monospace; padding: 20px; text-align: center; }
+        .box { border: 1px solid #00ff00; padding: 20px; margin: 20px auto; max-width: 600px; box-shadow: 0 0 15px #00ff00; }
+        .btn { background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+        .status { color: #ff0000; font-size: 0.8em; }
+        #addressDisplay { word-break: break-all; color: #00ffff; }
+    </style>
+</head>
+<body>
+
+    <h1>UIP07 GLOBAL HUB</h1>
+    <p class="status">NETWORK: SOVEREIGN | STATUS: LIVE</p>
+
+    <div class="box">
+        <h3>Master Genesis Address</h3>
+        <p id="masterAddr">Loading Chain...</p>
+        <h2>Balance: <span id="balance">0</span> PoWHS$</h2>
+    </div>
+
+    <div class="box" id="shadowSection">
+        <h3>Intelligence Shadow Engine</h3>
+        <p>Create a protected identity on the PoWHS chain.</p>
+        <button class="btn" onclick="generateShadow()">Generate Shadow Address</button>
+        <div id="newShadowDisplay" style="margin-top:20px;"></div>
+    </div>
+
+    <script>
+        // 1. Fetch data from your chain.json
+        async function loadChain() {
+            try {
+                const response = await fetch('chain.json');
+                const data = await response.json();
+                document.getElementById('masterAddr').innerText = data.genesis_ledger.master_address;
+                document.getElementById('balance').innerText = parseInt(data.genesis_ledger.initial_balance).toLocaleString();
+            } catch (err) {
+                document.getElementById('masterAddr').innerText = "Error: chain.json not found";
+            }
+        }
+
+        // 2. Intelligence Shadow Generator (Pillar 1)
+        function generateShadow() {
+            const randomHash = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            const shadowAddr = "UIP07_SHADOW_" + btoa(randomHash).substring(0, 32);
+            
+            document.getElementById('newShadowDisplay').innerHTML = `
+                <p style="color:white;">New Protected Address:</p>
+                <p id="addressDisplay">${shadowAddr}</p>
+                <small style="color:yellow;">Shadow Identity Linked to Intelligence Layer</small>
+            `;
+        }
+
+        loadChain();
+    </script>
+</body>
+</html>
